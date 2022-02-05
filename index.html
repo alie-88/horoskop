@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+ <head>
+	<style>
+		* {
+			box-sizing: border-box;
+		}
+		div {
+			width: 30%;
+			margin: auto;
+			background-color: powderblue;
+			border: 1px solid rgb(200, 200, 200);
+			height: 400px;
+		}
+		button {
+			display: block;
+			margin: 20px auto;
+			padding: 5px 8px;
+		}
+		h3 {
+			text-align: center;
+		}
+		p {
+			text-align: center;
+			font-size: 30px;
+			font-family: Arial;
+			padding: 80px;
+		}
+	</style>
+ </head>
+ <body>
+ 
+		<div>
+			<button onclick="myHoroskop()">Click here</button>
+			<h3>Keberuntungan Anda hari ini</h3>
+			<hr>
+			<p id="str"></p>
+		</div>
+		
+		<script>
+			function myHoroskop() {
+				
+				const randomNumber = Date.now();
+				let max = 4;
+				let min = 1;
+				
+				const resultNumber = Math.floor((randomNumber % 10) / (max - min + 1) + 1 );
+								
+				if (resultNumber === 1) {
+					document.getElementById("str").innerHTML = "Hebat!";
+					document.getElementById("str").style.color = "blue";
+					
+				} else if (resultNumber === 2) {
+					document.getElementById("str").innerHTML = "Boleh juga!";
+					document.getElementById("str").style.color = "green";
+					
+				} else {
+					document.getElementById("str").innerHTML = "Mengerikan!";
+					document.getElementById("str").style.color = "red";
+				}
+				
+			}
+		</script>
+ 
+ </body>
+ </html>
